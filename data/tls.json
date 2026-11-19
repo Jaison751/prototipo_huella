@@ -1,0 +1,62 @@
+[
+ {
+  "prueba": "T1 TLS 8883 + CA + usuario unico",
+  "ok": true,
+  "detalle": "resultado=Success"
+ },
+ {
+  "prueba": "T2 el cliente rechaza un servidor cuyo certificado no valida (anti-suplantacion)",
+  "ok": true,
+  "detalle": "resultado=[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in cer"
+ },
+ {
+  "prueba": "T3 el broker no atiende MQTT en texto plano",
+  "ok": true,
+  "detalle": "respuesta=ninguna"
+ },
+ {
+  "prueba": "T4 rechaza admin/admin",
+  "ok": true,
+  "detalle": "resultado=Not authorized"
+ },
+ {
+  "prueba": "T4 rechaza huella_dev/clave incorrecta",
+  "ok": true,
+  "detalle": "resultado=Not authorized"
+ },
+ {
+  "prueba": "T5a usuario administrador valido (para el monitor)",
+  "ok": true,
+  "detalle": "resultado=Success"
+ },
+ {
+  "prueba": "T5b el dispositivo publica en su espacio huella/hb-7f3a/#",
+  "ok": true,
+  "detalle": "recibido por el monitor: ['huella/hb-7f3a/telemetria']"
+ },
+ {
+  "prueba": "T5c el dispositivo NO puede publicar en tópicos ajenos",
+  "ok": true,
+  "detalle": "mensajes ajenos descartados por la ACL"
+ },
+ {
+  "prueba": "T6a el dispositivo puede suscribirse a su tópico de comandos",
+  "ok": true,
+  "detalle": "suback=['Granted QoS 1']"
+ },
+ {
+  "prueba": "T6b el dispositivo NO puede suscribirse a '#'",
+  "ok": true,
+  "detalle": "suback=['Unspecified error']"
+ },
+ {
+  "prueba": "T6c un comando del administrador llega al dispositivo",
+  "ok": true,
+  "detalle": "recibido=[('huella/hb-7f3a/cmd', 'FLASH ON')]"
+ },
+ {
+  "prueba": "T7 version y suite de TLS negociadas",
+  "ok": true,
+  "detalle": "TLSv1.3 / TLS_AES_256_GCM_SHA384"
+ }
+]
